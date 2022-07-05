@@ -1,0 +1,16 @@
+* There is only a single BST possible for a given preorder or postorder traversal
+* Anything done in preorder can be done with postorder, just the other way around e.g. preorder - 1st elt of the arr is root, postorder - last elt of the arr is root
+* when the graph in question is also a tree, and the initial vertex for DFS is the tree's root then DFS and a pre-order traversal are equivalent.
+
+
+
+
+Algos :
+* Narrowing bound algorithm
+
+
+
+
+
+Problems :
+* https://www.geeksforgeeks.org/check-if-a-given-array-can-represent-preorder-traversal-of-binary-search-tree/
