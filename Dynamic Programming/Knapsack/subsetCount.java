@@ -3,7 +3,11 @@ Count subsets (subsequences, to be precise) with given sum
 OR
 Number of way to achieve the sum
 
-Soln : Same as subsetSum
+Note : Input array is expected to have only +ve integers (>0). For input array with
+       0, follow leetcode_494.java
+
+Soln : Same as subsetSum, only difference is, here we are tracking number of possible
+subsets instead of possibility of subset.
  */
 
 public class Solution {

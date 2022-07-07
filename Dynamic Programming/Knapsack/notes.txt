@@ -1,0 +1,33 @@
+Problems based on 0/1 Knapsack or SubsetSum problem :
+
+NOTE : All these algos run only if input array has only +ve integers.
+       Even for input arrays with 0, we need some slight modifications
+       in some of the algos( mentioned in the respective algo code file )
+
+       In case input contains -ve numbers, we need to handle it in a
+       different way, look at negativeKnapsack.java
+
+1. Minimum subset sum difference
+Soln - explained in the code
+
+2. Number of subsets with given difference
+Soln - Lets say the given difference is diff = subsetSum1 - subsetSum2
+Now we need to find all possible subset1 and subset2 pairs while difference
+would be equal to diff.
+
+Let's see if we can reduce this problem to a known one.
+sum = subsetSum1 + subsetSum2
+diff = subsetSum1 - subsetSum2
+     = subsetSum1 - (sum - subsetSum1)
+     = 2*subsetSum1 - sum
+subsetSum1 = (diff + sum)/2 which is constant
+
+So, finally the problem boils down to finding number of subsets with the sum
+subsetSum1 i.e. the subsetCount.java code
+
+3. Target Sum | LC-494 (https://leetcode.com/problems/target-sum/)
+Soln - This problem boils down to dividing the given array into two subsets,
+one for numbers with +ve sign and another for numbers with -ve sign, such
+that the difference of their sums is equal to target. And we need to return
+the number of ways such division can be done. Which is basically the problem
+2 (Number of subsets with given difference) above.
