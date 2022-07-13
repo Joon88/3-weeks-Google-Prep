@@ -31,3 +31,28 @@ one for numbers with +ve sign and another for numbers with -ve sign, such
 that the difference of their sums is equal to target. And we need to return
 the number of ways such division can be done. Which is basically the problem
 2 (Number of subsets with given difference) above.
+
+4. Coin change | LC-322 (https://leetcode.com/problems/coin-change/)
+Soln - Unbounded knapsack problem. Can pick an item more than once, thus in
+1D bottom up DP, we go from left to right.
+
+5. Coin Change 2 | LC-518 (https://leetcode.com/problems/coin-change-2/)
+Soln - Unbounded knapsack problem, with similar logic as subsetCount or
+number of ways algo.
+The typical recursive equation for unbounded knapsack problems :
+f(n, sum) ---> f(n-1, sum)                      ; arr[n] > sum
+          ---> f(n-1, sum) + f(n, sum - arr[n]) ; n > 0 && sum > 0
+          ---> 1                                ; sum = 0
+          ---> 0                                ; n = 0 && sum != 0
+
+The f(n, sum - arr[n]) in the second equation is the only difference,
+this means we are picking the element and not moving forward, so that
+multiple instances of the same element can be picked. For O1 knapsack
+it's f(n-1, sum - arr[n]), because once we pick it, we move forward.
+
+6. Rod Cutting Problem (https://practice.geeksforgeeks.org/problems/rod-cutting0840/1#)
+Soln - Same logic as unbounded knapsack.
+(Took time while doing it first time, practice once again)
+
+7. Minimum operations to reduce X to 0 | LC-1658 (https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/)
+Soln - Not able to solve, pls revisit. Recursive with memoization give TLE

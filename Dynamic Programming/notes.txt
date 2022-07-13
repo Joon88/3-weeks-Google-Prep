@@ -1,0 +1,46 @@
+Problems based on recursion followed by DP :
+
+NOTE : Sometime it's a bit difficult to go directly to bottom up DP, so memoization
+serves best for those scenarios.
+
+1. Interleaving String | LC-97 (https://leetcode.com/problems/interleaving-string/)
+Soln - Purely based on recursive thinking and then optimising, as repeating subproblems
+are present.
+
+2. Longest Common Subsequence (LCS) | LC-1143 (https://leetcode.com/problems/longest-common-subsequence/)
+Soln - Pure recursion followed by memoization or a bottom up approach. O(mn) time and space
+To find the LCS string from the 2-D DP table :
+```
+private String findLCS(int[][] dp, String s1, String s2) {
+        StringBuilder sb = new StringBuilder();
+        int i = dp.length-1;
+        int j = dp[0].length-1;
+        while(dp[i][j] != 0) {
+            if(s1.charAt(i-1) == s2.charAt(j-1)){
+                i--; j--;
+                sb.append(s1.charAt(i));
+            } else if(dp[i-1][j] == dp[i][j])
+                i--;
+            else if(dp[i][j-1] == dp[i][j])
+                j--;
+        }
+        return sb.reverse().toString();
+    }
+```
+
+3. Shortest Common Supersequence (SCS) | LC-1092 (https://leetcode.com/problems/shortest-common-supersequence/)
+Soln - Uses the LCS concept. The SCS in worst case will be s1+s2 (when there's nothing common among them).
+And in best case will be the longest(s1, s2), when one is a subsequence of another. So, the SCS will
+definitely have the elements in the LCS once.
+
+4. Longest Repeating Subsequence (https://www.interviewbit.com/problems/repeating-subsequence/)
+Soln - Based on LCS, this is very interesting. So, the heading is somewhat confusing, and I could
+not understand the question in the first place. So, repeating subsequence means, a subsequence
+than occurs twice in the string. Now, for a subsequence to occur twice, with no characters being
+shared by the subsequences. There must be more than one occurrence of a character for it to be in
+the longest repeating subsequence.
+Now while applying the LCS concept here, we consider the same string in both the row and column of
+the 2-D DP grid. And try to find the LCS (which by normal LCS rules will be the same string itself),
+by not counting a character as part of the LCS if i == j i.e. the index of the char is same in both
+the strings (in this case, both string signify the same input string). This is because, for any char
+occurs just once in the string, i == j always. And that's what we want to exclude.
