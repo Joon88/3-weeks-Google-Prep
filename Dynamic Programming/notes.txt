@@ -44,3 +44,9 @@ the 2-D DP grid. And try to find the LCS (which by normal LCS rules will be the 
 by not counting a character as part of the LCS if i == j i.e. the index of the char is same in both
 the strings (in this case, both string signify the same input string). This is because, for any char
 occurs just once in the string, i == j always. And that's what we want to exclude.
+
+5. Wildcard Matching | LC-44 (https://leetcode.com/problems/wildcard-matching/)
+Soln - Wildcards * & ? are in consideration. If it would only have been *, then just finding if pattern
+is a subsequence of given string would have sufficed, but with this wildcard chars, I had to start
+thinking recursively from the beginning, keeping in mind the LCS recursive equations. Really happy
+that I did this myself, without referring to any tutorials :), coz its LC-Hard.
