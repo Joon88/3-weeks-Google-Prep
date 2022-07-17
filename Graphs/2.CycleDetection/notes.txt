@@ -1,0 +1,54 @@
+Connected Graph :
+A graph is connected if any two vertices of the graph are connected by a path.
+An undirected graph is always connected, if it doesn't look like a forest.
+
+Disconnected Graph :
+A graph is disconnected if at least two vertices of the graph are not connected
+by a path. If a graph G is disconnected, then every maximal connected subgraph
+of G is called a connected component of the graph G.
+A directed graph maybe connected or disconnected, even if it doesn't look like
+a forest.
+
+Node coloring in Graphs :
+
+White - unvisited nodes
+Grey - visited and currently in the recursion stack
+Black - processed nodes i.e. visited and out of the current recursion stack
+
+Detecting cycles :
+(using DFS) :
+1. For undirected graph it's a DFS while keeping track of the visited nodes
+(grey nodes) and the current parent.
+If the graph is disconnected, then we have to run DFS in all the unvisited nodes(white nodes)
+one by one, while KEEPING TRACK OF THE NODES IN THE CURRENT RECURSION STACK(GREY NODES) AND
+THE CURRENT PARENT. Else running DFS in just one node will be enough.
+
+*** For undirected graphs, no need to track the processed nodes(black nodes), this is because
+for an undirected graph's connected subgraph, once we start with a node, we will always have
+the visited nodes in stack, unless we are done looking for cycles. So, there's no point keeping
+track of the nodes visited and removed from stack. We need all three i.e. white, grey and black
+only in case of directed graphs.
+
+2. For directed graph, since we are not sure if its connected or disconnected, we always
+consider it to be disconnected, and run DFS in all the unvisited nodes KEEPING TRACK OF
+THE NODES IN THE RECURSION STACK(GREY NODES) AND THE PROCESSED NODES(BLACK NODES).
+In case we know thw graph to have only a single component, just KEEP TRACK OF THE GREY NODES.
+
+(using BFS) :
+1. For undirected graph, while doing BFS traversal for all unvisited nodes (coz maybe it's
+a forest), KEEP TRACK OF PARENT OF A VISITED NODE & THE GREY NODES. This is because, we'll
+say there's a cycle if the next node is a visited node and is not the parent of the current
+node. If it's the parent, that means its taking the same edge that it just traversed to reach
+the current node, so no cycle.
+
+2. Kahn's Algo
+
+
+
+Some Problems on Cycle Detection :
+
+1. Course Schedule | LC-207 (https://leetcode.com/problems/course-schedule/)
+Soln - First identify that its Graph problem, by the fact that, pairs of numbers are given,
+where one is dependent on another, which can be displayed on a paper using an arrow. This
+visualisation leads to the idea of cycle detection in graph.
+O(V+E) time complexity and

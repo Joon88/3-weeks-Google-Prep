@@ -1,0 +1,26 @@
+BFS & DFS :
+One stop explanation : https://betterprogramming.pub/algorithms-searching-through-a-tree-33610e4577bd
+
+Algos :
+* DFS with pruning : this means doing a DFS traversal, but trying to minimise the number of unnecessary
+calls i.e. doing only that much traversal as is required.
+
+
+Bipartite Graph/Bi-graph :
+e.g. https://leetcode.com/problems/possible-bipartition/
+
+A bipartite graph is a graph whose vertices can be divided into two disjoint sets(no joins/edges
+between nodes in same set) or independent sets U & V, such that every edge connects a vertex in
+U to a vertex in V.
+
+* A bigraph can only have even edge length cycle
+* Odd cycle is only possible if there is an edge between 2 vertices in the same set, but in that
+case the graph would no longer be bipartite.
+
+How to identify if a graph is bipartite ?
+1. Make adjacency list
+2. If there is no odd length cycle, then graph is bipartite
+3. To find if there exists odd length cycles, we can use graph coloring with 2 colors.
+
+Graph Coloring :
+Color vertices of a graph, such that the adjacent vertices do not have the same color.
