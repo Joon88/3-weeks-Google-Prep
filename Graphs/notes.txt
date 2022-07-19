@@ -1,5 +1,12 @@
+Graph Representation :
+* Adjacency Matrix : O(V^2) time and space to form and store
+* Adjacency List : O(V+E) time and space to form and store
+For very dense graph E ~ V^2, so adjacency matrix serves better else adjacency list
+
 BFS & DFS :
 One stop explanation : https://betterprogramming.pub/algorithms-searching-through-a-tree-33610e4577bd
+Time Complexity : O(V+E)
+Space : O(V)
 
 Algos :
 * DFS with pruning : this means doing a DFS traversal, but trying to minimise the number of unnecessary
@@ -16,6 +23,7 @@ U to a vertex in V.
 * A bigraph can only have even edge length cycle
 * Odd cycle is only possible if there is an edge between 2 vertices in the same set, but in that
 case the graph would no longer be bipartite.
+* So, checking for odd length cycle is the test for bipartite graph
 
 How to identify if a graph is bipartite ?
 1. Make adjacency list
@@ -24,3 +32,15 @@ How to identify if a graph is bipartite ?
 
 Graph Coloring :
 Color vertices of a graph, such that the adjacent vertices do not have the same color.
+
+
+Topological Sort :
+* Only possible for DAG(directed acyclic graph)
+* The DAG should have atleast one node with indegree = 0 and atleast one node with outdegree = 0
+* Since its acyclic, so no worries about -ve weights, as there can't be any -ve weight cycles
+possible.
+* Topological sort is a linear ordering of vertices such that for every directed edge UV(U -> V),
+vertex U comes before vertex V in the ordering.
+* Topological sort starts from vertices with in-degree 0, so if there are more than one vertex
+with 0 in-degree, we'll have more than one possible topological sort output for the graph.
+* Follow to code under Algorithms/Graphs/DAGShortestPath.java
