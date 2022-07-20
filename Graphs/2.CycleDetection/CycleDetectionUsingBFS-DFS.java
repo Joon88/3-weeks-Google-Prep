@@ -170,4 +170,35 @@ public class Solution {
         }
         return false;
     }
+
+    // Kahn's Algo (Using BFS) : O(V+E) time and O(V) space
+    public static boolean isDirectedCyclicBFS(Map<Integer, List<Integer>> graph) {
+        int[] indegree = new int[graph.size()]; // to store the indegree of all vertices in the graph
+
+        for(List<Integer> edges : graph.values()) { // O(V+E) time
+            for(int v : edges) {
+                indegree[v] += 1;
+            }
+        }
+
+        Queue<Integer> q = new LinkedList<>();
+        for(int v = 0 ; v < indegree.length ; v++) { // Pushing the 0 indegree vertices to queue
+            if(indegree[v] == 0)
+                q.add(v);
+        }
+        int verticesVisited = 0;
+        while(!q.isEmpty()) {      // O(E)
+            int u = q.poll(); // The order in which we get this u for a DAG, is the topological sorted order of the graph
+            verticesVisited++;
+            for(int v : graph.get(u)) {
+                indegree[v] -= 1;
+                if(indegree[v] == 0)
+                    q.add(v);
+            }
+        }
+        if(verticesVisited < graph.size()) // this means the graph is not a DAG, so its cyclic
+            return true;
+        else
+            return false;
+    }
 }

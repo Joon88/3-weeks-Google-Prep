@@ -1,5 +1,9 @@
 /*
 LC-210 - Course Schedule - II (https://leetcode.com/problems/course-schedule-ii/)
+
+Below solution is using DFS, but we can also do it using Kahn's Algo, this would enable
+us to get the topological sorted order of the graph, and also let us know if there's a
+cycle in the graph and is not a DAG.
  */
 
 // O(V+E) time and space

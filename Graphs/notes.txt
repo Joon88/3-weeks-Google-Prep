@@ -3,6 +3,7 @@ Graph Representation :
 * Adjacency List : O(V+E) time and space to form and store
 For very dense graph E ~ V^2, so adjacency matrix serves better else adjacency list
 
+
 BFS & DFS :
 One stop explanation : https://betterprogramming.pub/algorithms-searching-through-a-tree-33610e4577bd
 Time Complexity : O(V+E)
@@ -36,7 +37,8 @@ Color vertices of a graph, such that the adjacent vertices do not have the same 
 
 Topological Sort :
 * Only possible for DAG(directed acyclic graph)
-* The DAG should have atleast one node with indegree = 0 and atleast one node with outdegree = 0
+* A DAG always has atleast one node with indegree = 0 and atleast one node with outdegree = 0
+(necessary condition, not sufficient condition).
 * Since its acyclic, so no worries about -ve weights, as there can't be any -ve weight cycles
 possible.
 * Topological sort is a linear ordering of vertices such that for every directed edge UV(U -> V),
@@ -44,3 +46,18 @@ vertex U comes before vertex V in the ordering.
 * Topological sort starts from vertices with in-degree 0, so if there are more than one vertex
 with 0 in-degree, we'll have more than one possible topological sort output for the graph.
 * Follow to code under Algorithms/Graphs/DAGShortestPath.java
+
+
+Disjoint Sets :
+* Two or more sets with nothing in common are called disjoint sets e.g. S1 & S2 are disjoint
+sets in S1 ^ S2 = phi
+
+Use of Disjoint sets :
+* (FIND Operation) Keeps track of the set to which an element belong to. Thus, its easier to
+check, give 2 elements, whether they belong to the same subset.
+* (UNION Operation) Used to merge two sets into one. Here union of two elements in actually
+union of the disjoint sets they are part of.
+
+Disjoint sets use chaining to define a set. The chaining is defined by a parent-child relationship,
+and it doesn't matter which element of the set is treated as the parent.
+(further explanation in Virat Kohli wala long copy, from front)
