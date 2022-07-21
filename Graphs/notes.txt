@@ -61,3 +61,12 @@ union of the disjoint sets they are part of.
 Disjoint sets use chaining to define a set. The chaining is defined by a parent-child relationship,
 and it doesn't matter which element of the set is treated as the parent.
 (further explanation in Virat Kohli wala long copy, from front)
+
+Spanning Tree :
+* Spanning tree is a subset of a graph.
+* Spanning tree cannot be disconnected.
+* Graph should be single component to find spanning tree.
+* In Spanning tree with V vertices, thee are V-1 edges always.
+
+
+Good Resource of TreeSet and TreeMap : https://medium.com/swlh/introduction-to-treeset-and-treemap-5405f21124d
