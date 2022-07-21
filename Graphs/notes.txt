@@ -69,4 +69,10 @@ Spanning Tree :
 * In Spanning tree with V vertices, thee are V-1 edges always.
 
 
+Edge Relaxation :
+* Whenever we are relaxing edges of a graph, be it to find MST as in Prim's or shortest path in Dijkstra's
+or Bellman Ford. We always run the relaxEdge function V-1 times, coz the max number of edges in a MST or
+shortest path tree will always be V-1.
+
+
 Good Resource of TreeSet and TreeMap : https://medium.com/swlh/introduction-to-treeset-and-treemap-5405f21124d

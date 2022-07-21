@@ -44,8 +44,8 @@ the current node, so no cycle.
 2. Kahn's Algo for directed graphs (DAGs)
 This uses BFS type of traversal using a queue, and is based on vertices' indegree. Kahn's Algo
 is also extensively used to find topological sort of a DAG(directed acyclic graph). Thus it
-serves two purposes, if graph is DAG, we will get the DAG, or else we get to know if there's
-a cycle in the graph or not.
+serves two purposes, if graph is DAG, we will get the topological sort, or else we get to know
+if there's a cycle in the graph or not.
 And for DAG, the NECESSARY CONDITION is existence of atleast one vertex with 0 indegree and
 one vertex with 0 outdegree. But, it's not the sufficient condition.
 
