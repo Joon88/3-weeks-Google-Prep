@@ -7,7 +7,7 @@ For very dense graph E ~ V^2, so adjacency matrix serves better else adjacency l
 BFS & DFS :
 One stop explanation : https://betterprogramming.pub/algorithms-searching-through-a-tree-33610e4577bd
 Time Complexity : O(V+E)
-Space : O(V)
+Space : O(V+E) to store the graph
 
 Algos :
 * DFS with pruning : this means doing a DFS traversal, but trying to minimise the number of unnecessary
