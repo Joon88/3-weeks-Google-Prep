@@ -39,9 +39,11 @@ public class Solution {
 
                 if(parent[u] == -1 && children > 1) // scenario 1
                     artiPoints[u] = true;
-                else if(parent[u] != -1 && low[v] >= disc[u])  // scenario 2
+                else if(parent[u] != -1 && low[v] >= disc[u]) {  // there can be another edge between u & v,
+                                                                 // other than the one under consideration now,
+                                                                 // thats why the condtn is '>='
                     artiPoints[u] = true;
-
+                }
             } else if(v != parent[u]) {
                 low[u] = Math.min(low[u], disc[v]); // this is for back edge
             }
