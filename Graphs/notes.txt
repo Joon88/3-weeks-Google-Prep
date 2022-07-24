@@ -9,6 +9,18 @@ One stop explanation : https://betterprogramming.pub/algorithms-searching-throug
 Time Complexity : O(V+E)
 Space : O(V+E) to store the graph
 
+If the problem involves finding the nearest neighbour or the shortest path, BFS performs better — as in
+the case of DFS, leaf nodes are visited first.
+BFS can only be used to find shortest path in a graph if:
+1. There are no loops
+2. All edges have same weight or no weight.
+
+But in the case of solving a puzzle or topological sorting (i.e., cases where the result needs to be
+evaluated on reaching leaf nodes), DFS performs better.
+
+* Dijkstra's is nothing but BFS with weight of path in consideration. We can also find single source
+shortest path of an unweighted graph directly using plain BFS.
+
 Algos :
 * DFS with pruning : this means doing a DFS traversal, but trying to minimise the number of unnecessary
 calls i.e. doing only that much traversal as is required.
