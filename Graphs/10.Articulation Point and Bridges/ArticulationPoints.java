@@ -1,4 +1,6 @@
 /*
+Count all the articulation points or cut vertices in a graph.
+
 In this problem, we are considering undirected graph, so there won't be any cross edges, thus no Stack
 or inStack() required.
 

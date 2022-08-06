@@ -18,12 +18,22 @@ if(nums[n-1] > targetSum)
     return countSubsets(n-1, targetSum, nums);
 return countSubsets(n-1, targetSum, nums) + countSubsets(n-1, targetSum-nums[n-1], nums);
 
+TO BE MORE PRECISE :
+
+if(n == 0 && targetSum == 0)
+    return 1;
+if(n == 0)
+    return 0;
+if(nums[n-1] > targetSum)
+    return countSubsets(n-1, targetSum, nums);
+return countSubsets(n-1, targetSum, nums) + countSubsets(n-1, targetSum-nums[n-1], nums);
+
 This is because, if nums array has an element as 0, then there would me more than one
 way of obtaining a 0 targetSum i.e. {} and {0}. And for x number of 0s in the nums
 array, there would be 2^x ways of getting a targetSum of zero from them.
 
-This thing also need to be taken care of when intialising the bottom up 2D dp matrix,
-and also for the bottom up 1D dp matrix (line 45 of below code).
+This thing also needs to be taken care of when intialising the bottom up 2D dp matrix,
+and also for the bottom up 1D dp matrix (line 47 of below code).
 In 2D dp matrix, in the second for loop, process all columns from index 0
 In memoization, intialise on those (i, 0) to 1, where nums[i-1] > 0
  */

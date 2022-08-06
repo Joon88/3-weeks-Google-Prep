@@ -155,6 +155,7 @@ public class Solution {
     }
 
     private static boolean isUnDirectedCyclicBFSRecur(Map<Integer, List<Integer>> graph, Queue<Integer> q, int src, int[] visited, int[] parent) {
+        visited[src] = 1;
         q.add(src);
         while(!q.isEmpty()) {
             int u = q.poll();

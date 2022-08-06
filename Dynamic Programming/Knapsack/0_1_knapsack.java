@@ -15,17 +15,22 @@ public class Solution {
         }
         System.out.println(maxWeight(weights.length, capacity, weights, profits));
     }
-    // O(2^n) time and O(n) space, where n is size of weights array
+    // (Exhaustive method) O(2^n) time and O(n) space for the recursion stack, where n is size of weights array
     public static int maxWeight(int n int cap, int[] weights, int[] profits) {
         if(cap == 0 || n == 0)
             return 0;
-        return Math.max(maxWeight(n-1, cap), profits[n-1] + maxWeight(n-1, cap-weights[n-1]));
+        return Math.max(maxWeight(n-1, cap, weights, profits), profits[n-1] + maxWeight(n-1, cap-weights[n-1], weights, profits));
     }
     // O(nC) time and O(c) space, where n is size of weights array and c is the capcity of the knapsack
     public static int maxWeight(int n int cap, int[] weights, int[] profits) {
+        if(n == 0 || cap == 0)
+            return 0;
         if(memo[n][cap] >= 0)
             return memo[n][cap];
-        memo[n][cap] = Math.max(maxWeight(n-1, cap), profits[n-1] + maxWeight(n-1, cap-weights[n-1]));
+        if(cap < weights[n-1])
+            memo[n][cap] = maxWeight(n-1, cap, weights, profits);
+        else
+            memo[n][cap] = Math.max(maxWeight(n-1, cap, weights, profits), profits[n-1] + maxWeight(n-1, cap - weights[n-1], weights, profits));
         return memo[n][cap];
     }
     // 2-D DP
@@ -78,6 +83,8 @@ public class Solution {
             for(int wt = cap; wt >= 1; wt--) {
                 if(weights[i] <= wt) {
                     dp[wt] = Math.max(dp[wt], profits[i] + dp[wt-weights[i]]);
+                } else {
+                    break;
                 }
             }
         }

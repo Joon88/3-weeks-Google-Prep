@@ -62,7 +62,7 @@ with 0 in-degree, we'll have more than one possible topological sort output for 
 
 Disjoint Sets :
 * Two or more sets with nothing in common are called disjoint sets e.g. S1 & S2 are disjoint
-sets in S1 ^ S2 = phi
+sets if S1 ^ S2 = phi
 
 Use of Disjoint sets :
 * (FIND Operation) Keeps track of the set to which an element belong to. Thus, its easier to

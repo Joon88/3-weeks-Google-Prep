@@ -32,7 +32,7 @@ only in case of directed graphs.
 2. For directed graph, since we are not sure if its connected or disconnected, we always
 consider it to be disconnected, and run DFS in all the unvisited nodes KEEPING TRACK OF
 THE NODES IN THE RECURSION STACK(GREY NODES) AND THE PROCESSED NODES(BLACK NODES).
-In case we know thw graph to have only a single component, just KEEP TRACK OF THE GREY NODES.
+{In case we know the graph to have only a single component, just KEEP TRACK OF THE GREY NODES. - disputed}
 
 (using BFS) :
 1. For undirected graph, while doing BFS traversal for all unvisited nodes (coz maybe it's

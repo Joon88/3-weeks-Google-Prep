@@ -16,6 +16,10 @@ public class Solution {
         int[] nums = new int[]{3,1,2,3};
         int targetSum = 6;
         memo = new int[nums.length+1][targetSum+1];
+        // for memoization, just initialise the memo with an unique elt like -1,
+        // so that we can identify if the value for the grid place is calculated
+        // or not yet. The base case initalisation will happen in the recursive
+        // process itself.
         for(int[] a : memo) {
             Arrays.fill(a, -1);
             a[0] = 1;
@@ -36,8 +40,14 @@ public class Solution {
     }
     // O(nS) time and space
     public static int countSubsets(int n, int targetSum, int[] nums) {
-        if(memo[n][targetSum] >= 0)
+        if(targetSum == 0)
+            return 1;
+        if(n == 0)
+            return 0;
+
+        if(memo[n][targetSum] > -1)
             return memo[n][targetSum];
+
         if(nums[n-1] > targetSum)
             memo[n][targetSum] = countSubsets(n-1, targetSum, nums);
         else

@@ -26,10 +26,11 @@ class Solution {
                 positiveMod += x;
         }
 
-        int total = negativeMod + positiveMod; // total signifies the maximum value sum can assume
+        int total = negativeMod + positiveMod; // total signifies the maximum value/range sum can assume
                                                // both in the positive and in the negative direction
         // This is to handle the worst case scenario where lets say all values are positive, and we
-        // are asked to find subsets for sum 0. Then while considering the elt at every step, the
+        // are asked to find subsets for sum 0. Then while considering the elt at every step, we'll keep
+        // subtracting the current element from the targetSum i.e. 0 , so, the
         // total sum at the end would be -(sum of abs() of all elts) which is -total. The same thing
         // also applies on the positive side
         memo = new int[weights.length+1][2*total + 1];
@@ -68,16 +69,14 @@ class Solution {
 
     // O(nS) time and space
     public static boolean isSubsetPossible(int n, int sum, int weights[], int total) {
-        if(memo[n][sum+total] >= 0)
-            return memo[n][sum+total] == 1;
-        if(sum == 0) {
-            memo[n][sum + total] = 1;
+        if(sum == 0)
             return true;
-        }
-        if(n == 0) {
-            memo[n][sum + total] = 0;
+        if(n == 0)
             return false;
-        }
+
+        if(memo[n][sum+total] > -1)
+            return memo[n][sum+total] == 1;
+
         boolean result = isSubsetPossible(n-1, sum, weights, total) ||
                 isSubsetPossible(n-1, sum-weights[n-1], weights, total);
         memo[n][sum+total] = result ? 1 : 0;
@@ -86,12 +85,14 @@ class Solution {
 
     // O(nS) time and space
     public static int subsetCount(int n, int sum, int weights[], int total) {
-        if(memo[n][sum+total] >= 0)
-            return memo[n][sum+total];
         if(n == 0 && sum == 0)
-            return memo[n][sum+total] = 1;
+            return 1;
         if(n == 0)
-            return memo[n][sum+total] = 0;
+            return 0;
+
+        if(memo[n][sum+total] > -1)
+            return memo[n][sum+total];
+
         return memo[n][sum+total] = subsetCount(n-1, sum, weights, total) +
                 subsetCount(n-1, sum-weights[n-1], weights, total);
     }
@@ -112,6 +113,9 @@ class Solution {
         for(int i = 0 ; i < dp.length ; i++)
             dp[i][total] = true;
         for(int i = 1; i <= n ; i++) {
+            /*
+            // this two-direction thing is not actually reqd, as we are always reading the values
+            // from the row above for calculating the values of the current row.
             if(weights[i-1] < 0)
                 for(int s = toal-negativeMod ; s <= total+positiveMod ; s++) {
                     if(dp[i][s])
@@ -124,6 +128,10 @@ class Solution {
                         continue;
                     dp[i][s] = dp[i-1][s] || dp[i-1][s - weights[n-1]];
                 }
+            */
+            for(int s = toal-negativeMod ; s <= total+positiveMod ; s++) {
+                dp[i][s] = dp[i-1][s] || dp[i-1][s - weights[n-1]];
+            }
         }
         return dp[n][sum+total];
     }
@@ -143,6 +151,9 @@ class Solution {
             dp[0][i] = 0; // by default it'll be 0, added this just for reminder
         dp[0][total] = 1;
         for(int i = 1; i <= n ; i++) {
+            /*
+            // this two-direction thing is not actually reqd, as we are always reading the values
+            // from the row above for calculating the values of the current row.
             if(weights[i-1] < 0)
                 for(int s = total-negativeMod ; s <= total+positiveMod ; s++) {
                     dp[i][s] = dp[i-1][s] + dp[i-1][s - weights[i-1]];
@@ -151,6 +162,10 @@ class Solution {
                 for(int s = total+positiveMod ; s >= total-negativeMod  ; s--) {
                     dp[i][s] = dp[i-1][s] + dp[i-1][s - weights[i-1]];
                 }
+            */
+            for(int s = total-negativeMod ; s <= total+positiveMod ; s++) {
+                dp[i][s] = dp[i-1][s] + dp[i-1][s - weights[i-1]];
+            }
         }
         return dp[n][sum+total];
 

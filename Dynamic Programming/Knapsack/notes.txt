@@ -1,3 +1,9 @@
+*** In any memoization approach, always check the base cases first without any
+mention or check of the memo, just like in normal recursive equation without
+memoization. Once the base cases are handled, then check if the memo already
+has the required element. And also set the memo in the successive condition checks.
+In short, base cases, should not have any memo involved.
+
 Problems based on 0/1 Knapsack or SubsetSum problem :
 
 NOTE : All these algos run only if input array has only +ve integers.
@@ -41,7 +47,7 @@ Soln - Unbounded knapsack problem, with similar logic as subsetCount or
 number of ways algo.
 The typical recursive equation for unbounded knapsack problems :
 f(n, sum) ---> f(n-1, sum)                      ; arr[n] > sum
-          ---> f(n-1, sum) + f(n, sum - arr[n]) ; n > 0 && sum > 0
+          ---> f(n-1, sum) + f(n, sum - arr[n]) ; n > 0 && sum > 0 i.e. (<leave it> OR <pick it and stay there>)
           ---> 1                                ; sum = 0
           ---> 0                                ; n = 0 && sum != 0
 
@@ -55,4 +61,5 @@ Soln - Same logic as unbounded knapsack.
 (Took time while doing it first time, practice once again)
 
 7. Minimum operations to reduce X to 0 | LC-1658 (https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/)
-Soln - Not able to solve, pls revisit. Recursive with memoization give TLE
+Soln - Not able to solve, pls revisit. Recursive with memoization gives TLE. Done using prefixArraySum technique,
+as per Tech Dose video.

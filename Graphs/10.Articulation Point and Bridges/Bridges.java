@@ -1,3 +1,14 @@
+/*
+Count all the bridges or cut edges in a graph.
+
+In this problem, we are considering undirected graph, so there won't be any cross edges, thus no Stack
+or inStack() required.
+
+Time : O(V+E) and space : O(V+E)
+
+Implementation :
+LC-1192 (https://leetcode.com/problems/critical-connections-in-a-network/)
+ */
 class Solution {
     private static int UNVISITED = -1;
     private static int time = 0;

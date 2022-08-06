@@ -27,7 +27,12 @@ public class Solution {
 
     // Memoization : O(nS) time (number of unique subproblems) and O(nS) space where n is number of elts in arr, and S is the targetSum
     public static boolean isSubsetSumPossible(int n, int targetSum, int[] arr) {
-        if(memo[n][targetSum] >= 0)
+        if(targetSum == 0)
+            return true;
+        if(n == 0)
+            return false;
+        
+        if(memo[n][targetSum] > -1)
             return memo[n][targetSum] == 1;
         if (targetSum < arr[n - 1]) {
             memo[n][targetSum] = isSubsetSumPossible(n - 1, targetSum, arr) ? 1 : 0;

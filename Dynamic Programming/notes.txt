@@ -6,6 +6,7 @@ serves best for those scenarios.
 1. Interleaving String | LC-97 (https://leetcode.com/problems/interleaving-string/)
 Soln - Purely based on recursive thinking and then optimising, as repeating subproblems
 are present.
+Optimization : Using 2-D and 1-D bottom up DP (much better)
 
 2. Longest Common Subsequence (LCS) | LC-1143 (https://leetcode.com/problems/longest-common-subsequence/)
 Soln - Pure recursion followed by memoization or a bottom up approach. O(mn) time and space

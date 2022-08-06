@@ -8,7 +8,7 @@ class Solution {
     int[] parent;
     int LISend = -1;
     int maxLIS = 0;
-    // the above 3 are for getting the LIS string whileusing the memoization approach
+    // the above 3 are for getting the LIS string while using the memoization approach
     // After the code runs, we need to iterate the parent array from LISend idx to 0,
     // where at every step we jump to the parent idx, until the parent idx is -1 (i.e.
     // its the start of the LIS string)
@@ -107,19 +107,16 @@ class Solution {
         int temp[] = new int[nums.length];
         Arrays.fill(temp, Integer.MAX_VALUE);
         temp[0] = nums[0];
+        int j = 0;
         for(int i = 1 ; i < nums.length ; i++) {
-            if(nums[i] > temp[i-1]) {
-                temp[i] = nums[i];
+            if(nums[i] > temp[j]) {
+                temp[++j] = nums[i];
             } else {
                 int pos = findSuitablePos(temp, nums[i]);
                 temp[pos] = nums[i];
             }
         }
-        int ctr = 0;
-        for(int x : temp)
-            if(x < Integer.MAX_VALUE)
-                ctr++;
-        return ctr;
+        return j+1;
     }
     private int findSuitablePos(int[] a, int x) {
         int idx = Arrays.binarySearch(a, x); // returns i if its present or -(i+1) if its not present

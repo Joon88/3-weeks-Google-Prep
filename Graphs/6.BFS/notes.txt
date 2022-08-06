@@ -1,0 +1,147 @@
+Some example problems :
+
+1. LC-127 (https://leetcode.com/problems/word-ladder/)
+Soln - Its solution as done in leetcode, has important lesson to learn regarding BFS,
+i.e. once we visit a node for the first time, and put it to queue, we can get rid of
+the node, as we are sure this itself is the shortest path to the node (coz its BFS in
+a unweighted graph).
+
+Here's an alternative solution, which also uses BFS, but does not take advantage of the
+above discussed fact.
+
+class Solution {
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        Map<String, List<String>> graph = new HashMap<>();
+
+        boolean flag = false;
+
+        graph.put(beginWord, new LinkedList<>());
+        for(String s : wordList) {
+            if(endWord.equals(s))
+                flag = true;
+            graph.put(s, new LinkedList<>());
+        }
+
+        if(!flag)
+            return 0;
+
+        for(String node : graph.keySet()) {  // O(V^2)
+            List<String> l = graph.get(node);
+            for(String s : wordList) {
+                if(diff(node, s) == 1) {
+                    l.add(s);
+                }
+            }
+            graph.put(node, l);
+        }
+
+        return bfs(graph, beginWord, endWord) + 1;
+    }
+
+    private int bfs(Map<String, List<String>> graph, String bw, String ew) {
+        String src = bw;
+
+        Map<String, Integer> weight = new HashMap<>();
+        for(String s : graph.keySet()) {
+            weight.put(s, Integer.MAX_VALUE);
+        }
+
+        weight.put(src, 0);
+
+        Queue<String> q = new LinkedList<>();
+        q.add(src);
+
+        while(!q.isEmpty()) {     // O(V+E)
+            String u = q.poll();
+
+            for(String v : graph.get(u)) {
+                if(weight.get(v) == Integer.MAX_VALUE) {
+                    weight.put(v, weight.get(u)+1);
+                    q.add(v);
+                    if(v.equals(ew))
+                        return weight.get(ew);
+                }
+            }
+        }
+        return -1;
+    }
+
+    private int diff(String s1, String s2) {
+        int ctr = 0;
+        for(int i = 0 ; i < s1.length() ; i++) {
+            if(s1.charAt(i) != s2.charAt(i))
+                ctr++;
+        }
+        return ctr;
+    }
+}
+
+
+2. LC-126 (https://leetcode.com/problems/word-ladder-ii)
+Soln - Same as above, but instead of the depth, we need to return all the paths. Though I got TLE
+but the solution is efficient, see my solution in leetcode for good tricks. Else follow below :
+
+class Solution {
+    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
+        Set<String> set = new HashSet<>(wordList);
+
+        if(!set.contains(endWord))
+            return Arrays.asList();
+
+        return bfs(set, beginWord, endWord);
+    }
+
+    private List<List<String>> bfs(Set<String> set, String bw, String ew) {
+        String src = bw;
+        List<List<String>> ans = new ArrayList<>();
+
+        Queue<Object[]> q = new LinkedList<>();
+
+        List<String> path = new ArrayList<>();
+        path.add(src);
+
+        q.add(new Object[]{src, path});
+
+        boolean depthReached = false;
+
+        while(!depthReached && !q.isEmpty()) {
+            int elts = q.size();
+
+            List<String> toBeDeleted = new ArrayList<>();
+            for(int i = 0 ; i < elts ; i++) {
+                Object[] o = q.poll();
+                String u = String.valueOf(o[0]);
+                List<String> p = (List<String>)o[1];
+
+                for(int j = 0 ; j < u.length() ; j++)
+                    for(char ch='a' ; ch <= 'z' ; ch++) {
+                        StringBuilder sb = new StringBuilder(u);
+                        if(sb.charAt(j) == ch)
+                            continue;
+                        sb.replace(j, j+1, Character.toString(ch));
+
+                        if(set.contains(sb.toString())) {
+                            if(sb.toString().equals(ew)) {
+                                depthReached = true;
+                                //p.add(ew);
+                                List<String> newPath = new ArrayList<>(p);
+                                newPath.add(ew);
+                                ans.add(newPath);
+                                continue;
+                            }
+                            //p.add(sb.toString());
+                            List<String> newPath = new ArrayList<>(p);
+                            newPath.add(sb.toString());
+                            q.add(new Object[]{sb.toString(), newPath});
+                            toBeDeleted.add(sb.toString());
+                        }
+                    }
+            }
+
+            set.removeAll(toBeDeleted);
+
+
+        }
+        return ans;
+    }
+}
