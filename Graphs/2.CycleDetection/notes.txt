@@ -49,7 +49,9 @@ if there's a cycle in the graph or not.
 And for DAG, the NECESSARY CONDITION is existence of atleast one vertex with 0 indegree and
 one vertex with 0 outdegree. But, it's not the sufficient condition.
 
-
+*** For just doing BFS/DFS traversal without cycle detection, we just need visited array with
+2 values (one for unvisited flag and another for visited). Nothing else regd. Follow Algorithms -->
+Graphs --> src --> Graph.java
 
 Some Problems on Cycle Detection :
 

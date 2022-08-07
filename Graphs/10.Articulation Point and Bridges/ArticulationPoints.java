@@ -13,6 +13,7 @@ public class Solution {
     private static int UNVISITED = -1;
     private static int time = 0;
     private static void articulationPointsCount(Map<Integer, List<Integer>> graph) {
+        // this graph contains both (u,v) and (v,u) edges, as its an undirected graph
         int low[] = new int[graph.size()];
         int disc[] = new int[graph.size()];
         int parent[] = new int[graph.size()]; // need this to avoid the child -> parent edge
