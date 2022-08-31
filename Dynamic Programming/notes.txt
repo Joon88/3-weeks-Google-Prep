@@ -51,3 +51,6 @@ Soln - Wildcards * & ? are in consideration. If it would only have been *, then 
 is a subsequence of given string would have sufficed, but with this wildcard chars, I had to start
 thinking recursively from the beginning, keeping in mind the LCS recursive equations. Really happy
 that I did this myself, without referring to any tutorials :), coz its LC-Hard.
+
+6. Minimum Edit Distance | LC-72 (https://leetcode.com/problems/edit-distance/)
+Soln - Recursive equation commented in the code.
