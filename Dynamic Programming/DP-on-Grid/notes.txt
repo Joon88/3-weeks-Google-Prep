@@ -43,3 +43,6 @@ Soln - My recursive solution works too. But there's a better approach that uses 
 histogram problem (LC-84) to solve this problem. I have also done it using another approach to find the
 left and right bound alongwith the height of all possible contiguous 1s scenario, as per the YT channel
 knapsack recommendation.
+
+7. Burst balloons | LC-312 (https://leetcode.com/problems/burst-balloons/)
+Soln - Very important and hard problem based on the concept of matrix chain multiplication.
