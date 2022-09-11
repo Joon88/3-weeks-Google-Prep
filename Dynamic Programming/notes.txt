@@ -54,3 +54,9 @@ that I did this myself, without referring to any tutorials :), coz its LC-Hard.
 
 6. Minimum Edit Distance | LC-72 (https://leetcode.com/problems/edit-distance/)
 Soln - Recursive equation commented in the code.
+
+7. Longest common substring | LC-718 (https://leetcode.com/problems/maximum-length-of-repeated-subarray/)
+Soln - It's a subarray and not subsequence, the mentioned example is with integers, but with string too,
+it would be kind of similar. Note, whenever the letters/numbers at m and n do not match, we simply put it
+as 0, and not carry forward the max substring length found so far, as this value might be treated as a
+diagonal predecessor for an upcoming matching letter/number.

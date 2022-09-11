@@ -11,3 +11,35 @@ Algos :
 
 Problems :
 * https://www.geeksforgeeks.org/check-if-a-given-array-can-represent-preorder-traversal-of-binary-search-tree/
+
+Iterative ways to find Preorder/Postorder/Inorder traversals of a binary tree :
+(Follow 1st 3 videos of Tech Dose)
+1. Pre-order (1 stack reqd) : Start with the root in the stack. At every step pop x from stack, print it,
+and push to stack right(x) followed by left(x) (if they are non-null). Continue unless stack is empty.
+
+2. In-order (1 stack reqd) : With current set to root, keep pushing current in stack unless current == null,
+if current is null, pop from stack and print x, then set current = right(x). Continue this unless stack is empty.
+
+3. Post-order (2 stacks reqd) : start with root in stack 1, pop x from stack 1, push x to stack 2, and push
+left(x) and right(x) to stack 1. Continue this unless stack 1 is empty. Finally when we pop elts from stack 2
+we get everything is Post-order manner.
+
+
+* Given inorder and preorder OR inorder and postorder traversal of a binary tree, we can form the binary tree.
+This is because, inorder gives us the left and right subtree nodes for a root, and preorder/postorder give
+us the root of that subtree. Thus, without inorder we can't form the tree.
+
+
+Important Problems :
+
+1. Binary tree right side view | LC-199 (https://leetcode.com/problems/binary-tree-right-side-view/)
+Soln - Same solution also for left side view. This can also be solved using BFS.
+
+2. Binary Tree from Inorder and Preorder | LC-105 (https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+Soln - The solution suggested in the Solutions section of the LC question takes advantage of the fact
+that the nodes of the tree are created in the same sequence as the pre-order, so we can utilise that
+sequence and only map the inorder one, leading to O(n) complexity.
+
+3. Binary Tree from Inorder and Postorder | LC-106 (https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+Soln - Here I have implemented the optimisation of the postorder sequence, and only mapped the inorder
+sequence, as discussed in the question above too. You should follow this approach in the above problem too.
