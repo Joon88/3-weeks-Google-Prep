@@ -11,6 +11,7 @@ Algos :
 
 Problems :
 * https://www.geeksforgeeks.org/check-if-a-given-array-can-represent-preorder-traversal-of-binary-search-tree/
+ (see below Problem Number 7)
 
 Iterative ways to find Preorder/Postorder/Inorder traversals of a binary tree :
 (Follow 1st 3 videos of Tech Dose)
@@ -27,7 +28,8 @@ we get everything is Post-order manner.
 
 * Given inorder and preorder OR inorder and postorder traversal of a binary tree, we can form the binary tree.
 This is because, inorder gives us the left and right subtree nodes for a root, and preorder/postorder give
-us the root of that subtree. Thus, without inorder we can't form the tree.
+us the root of that subtree. Thus, without inorder we can't form the binary tree. NOTE here we are talking just
+about binary tree not BST.
 
 
 Important Problems :
@@ -43,3 +45,29 @@ sequence and only map the inorder one, leading to O(n) complexity.
 3. Binary Tree from Inorder and Postorder | LC-106 (https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
 Soln - Here I have implemented the optimisation of the postorder sequence, and only mapped the inorder
 sequence, as discussed in the question above too. You should follow this approach in the above problem too.
+
+4. Validate BST | LC-98 (https://leetcode.com/problems/validate-binary-search-tree/)
+Soln - Kind of easy except one scenario in this question i.e. the value of a node can be Integer.MIN_VALUE
+or Integer.MAX_VALUE. This disrupts the < min and > max false condition check. Also the criteria for a BST
+asked in this question is left < root < right. No left <= root.
+
+5. Diameter of binary tree | LC-543 (https://leetcode.com/problems/diameter-of-binary-tree/)
+Soln - Easy problem
+
+6. Construct BST from pre-order | LC-1008 (https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/)
+Soln - Somewhat similar to Binary Tree from Inorder and preorder. Gave me a hard time due to lack of attention.
+Please retry.
+Note : Whenever we are using range checks in tree question, always ensure, you check the range conditions first
+and then only think about creating the nodes. Don't create node first and then check range conditions for next node.
+
+7. Validate that a preorder sequence is of a BST | (https://www.interviewbit.com/problems/valid-bst-from-preorder/)
+Soln - Very Important. Can be done using O(n^2) easily, but stack helps achieve O(n) time. Also, one important
+observation is that, BST has many scopes of utilising Stacks as its just number comparison. Also, whenever we have
+2 nested loops (j inside i), with j as a function of i, it's an indication that Stack might be applicable here.
+
+8. Binary Tree maximum path sum | LC-124 (https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+Soln - Very good question, saw it in one exponent interview video too. And solved it by my own in one shot.
+The key is to imagine all the different ways a node can be in the max path, and take actions accordingly.
+
+9. Cousins in binary tree | LC-993 (https://leetcode.com/problems/cousins-in-binary-tree/)
+Soln - Easy but took time for me.
