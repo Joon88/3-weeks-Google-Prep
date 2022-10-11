@@ -71,3 +71,24 @@ The key is to imagine all the different ways a node can be in the max path, and 
 
 9. Cousins in binary tree | LC-993 (https://leetcode.com/problems/cousins-in-binary-tree/)
 Soln - Easy but took time for me.
+
+10. Invert a binary tree | LC-226 (https://leetcode.com/problems/invert-binary-tree/)
+Soln - Easy, just have to observe the example carefully.
+
+11. Count complete binary tree nodes | LC-222 (https://leetcode.com/problems/count-complete-tree-nodes/)
+Soln - Very interesting.
+
+12. Sum root to leaf numbers | LC-129 (https://leetcode.com/problems/sum-root-to-leaf-numbers/)
+Soln - Pretty straight forward.
+
+13. Vertical order traversal of binary tree | LC-987 (https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/)
+Soln - HARD. Great implementation of TreeMap and PQ. Must do.
+
+14. Lowest Common Ancestor | LC-236 (https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+Soln - First think by yourself. Its also solved in the Algorithms/Trees repo.
+
+15. Count good nodes in a binary tree | LC-1448 (https://leetcode.com/problems/count-good-nodes-in-binary-tree/)
+Soln - Solved by my own :)
+
+16. Serialise/Deserialise Binary tree | LC-297 (https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
+Soln - Used Preorder traversal with null chars (X) in it. Can also be done using level order traversal.
