@@ -1,4 +1,32 @@
+Implementing Queue using Stack :
+2 ways using 2 stacks :
+- enqueue takes O(n) and dequeue takes O(1) : on enqueue check if stack s1 is empty, if so push to s1,
+else keep popping all from s1 and push to s2, then push the new elt to s1, and then pop all elts in s2,
+and push them back to s1. And dequeue means, just pop from s1.
+- enqueue takes O(1) and dequeue takes O(n) : on enqueue just push to s1, on dequeue, keep popping all
+elts from s1 to s2, then the s2.pop() gives the reqd elt, then pop all remaining elts from s2 back to s1.
+
+
+Implementing Stack using Queue :
+2 ways using 2 queues :
+- push takes O(1) and pop takes O(n) : on push just enqueue in Q1, and on pop, dequeue everything from Q1,
+and enqueue them in Q2, except the last elt, which is to be returned. Then dequeue everything from Q2 and
+enqueue to Q1.
+- push takes O(n) and pop takes O(1) : on push, first dequeue everything from Q1 and enqueue to Q2, then
+enqueue the new elt to Q1, then dequeue everything from Q2 and enqueue back to Q1.
+
+
+Stack with O(1) getMin() :
+- 1st approach : O(n) space : have one additional stack, that keeps track of the currentMin, and that grows
+and shrinks with the main stack itself.
+- 2nd approach : O(1) space, but stack elements are modified :
+https://www.youtube.com/watch?v=QMlDCR9xyd8&list=PLEJXowNB4kPzEvxN8ed6T13Meet7HP3h0&index=7&ab_channel=TECHDOSE
+
+
 Some important problems :
 
 1. Largest rectangle in Histogram | LC-84 (https://leetcode.com/problems/largest-rectangle-in-histogram/)
 Soln - Couldn't do it in the first try, please retry, very important problem.
+
+2. Next greater element | LC-496 (https://leetcode.com/problems/next-greater-element-i/)
+Soln - Very Important stack utility

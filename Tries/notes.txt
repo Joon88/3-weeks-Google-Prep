@@ -1,2 +1,6 @@
 All you need to know about Tries :
 https://www.geeksforgeeks.org/trie-insert-and-search/
+
+Examples :
+1. Count words with given prefix | LC-2185 (https://leetcode.com/problems/counting-words-with-a-given-prefix/)
+Soln - Modified the TrieNode class

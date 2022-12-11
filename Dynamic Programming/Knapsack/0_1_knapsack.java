@@ -19,9 +19,11 @@ public class Solution {
     public static int maxWeight(int n int cap, int[] weights, int[] profits) {
         if(cap == 0 || n == 0)
             return 0;
+        if(cap < weights[n-1])
+            return maxWeight(n-1, cap, weights, profits);
         return Math.max(maxWeight(n-1, cap, weights, profits), profits[n-1] + maxWeight(n-1, cap-weights[n-1], weights, profits));
     }
-    // O(nC) time and O(c) space, where n is size of weights array and c is the capcity of the knapsack
+    // O(nc) time and O(nc) space, where n is size of weights array and c is the capcity of the knapsack
     public static int maxWeight(int n int cap, int[] weights, int[] profits) {
         if(n == 0 || cap == 0)
             return 0;

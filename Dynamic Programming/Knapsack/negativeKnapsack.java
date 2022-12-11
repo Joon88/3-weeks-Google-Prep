@@ -129,7 +129,7 @@ class Solution {
                     dp[i][s] = dp[i-1][s] || dp[i-1][s - weights[n-1]];
                 }
             */
-            for(int s = toal-negativeMod ; s <= total+positiveMod ; s++) {
+            for(int s = total-negativeMod ; s <= total+positiveMod ; s++) {
                 dp[i][s] = dp[i-1][s] || dp[i-1][s - weights[n-1]];
             }
         }
@@ -149,7 +149,7 @@ class Solution {
         int[][] dp = new int[n+1][2*total+1];
         for(int i = 0 ; i < dp[0].length ; i++)
             dp[0][i] = 0; // by default it'll be 0, added this just for reminder
-        dp[0][total] = 1;
+        dp[0][total] = 1; // for the rest of dp[i][total], the value can be more than 1 too, so need calculation
         for(int i = 1; i <= n ; i++) {
             /*
             // this two-direction thing is not actually reqd, as we are always reading the values
