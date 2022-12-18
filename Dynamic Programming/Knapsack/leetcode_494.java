@@ -35,7 +35,7 @@ array, there would be 2^x ways of getting a targetSum of zero from them.
 This thing also needs to be taken care of when intialising the bottom up 2D dp matrix,
 and also for the bottom up 1D dp matrix (line 47 of below code).
 In 2D dp matrix, in the second for loop, process all columns from index 0
-In memoization, intialise on those (i, 0) to 1, where nums[i-1] > 0
+// In memoization, intialise on those (i, 0) to 1, where nums[i-1] > 0
  */
 
 class Solution {
