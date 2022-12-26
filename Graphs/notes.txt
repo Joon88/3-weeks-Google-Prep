@@ -88,3 +88,5 @@ shortest path tree will always be V-1.
 
 
 Good Resource of TreeSet and TreeMap : https://medium.com/swlh/introduction-to-treeset-and-treemap-5405f21124d
+
+Implementation of `implements Comparable<Node>` : 3-weeks-Google-Prep > Graphs > Shortest Paths Algo > lc_743.java

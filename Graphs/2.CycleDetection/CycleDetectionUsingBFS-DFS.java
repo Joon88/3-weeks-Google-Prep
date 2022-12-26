@@ -99,6 +99,8 @@ public class Solution {
                 return true;
         }
         visited[u] = 2; // vertex completely processed and out of recursion stack
+        // if I keep storing these u's in a stack, and there are no cycles detected in the graph (i.e. the graph is a DAG), then
+        // the popping order of the stack will be th topological sorted order of the DAG
         return false;
     }
 

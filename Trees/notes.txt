@@ -30,6 +30,7 @@ we get everything is Post-order manner.
 This is because, inorder gives us the left and right subtree nodes for a root, and preorder/postorder give
 us the root of that subtree. Thus, without inorder we can't form the binary tree. NOTE here we are talking just
 about binary tree not BST.
+e.g. for BST, we can construct the tree with just the preorder array (https://www.geeksforgeeks.org/construct-bst-from-given-preorder-traversa/)
 
 
 Important Problems :
