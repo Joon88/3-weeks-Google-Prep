@@ -145,3 +145,6 @@ class Solution {
         return ans;
     }
 }
+
+3. LC-994 (https://leetcode.com/problems/rotting-oranges/description/)
+Soln - Both the brute force and the efficient solution solved. Imp problem.

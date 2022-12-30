@@ -4,7 +4,7 @@ Implementing Queue using Stack :
 else keep popping all from s1 and push to s2, then push the new elt to s1, and then pop all elts in s2,
 and push them back to s1. And dequeue means, just pop from s1.
 - enqueue takes O(1) and dequeue takes O(n) : on enqueue just push to s1, on dequeue, keep popping all
-elts from s1 to s2, then the s2.pop() gives the reqd elt, then pop all remaining elts from s2 back to s1.
+elts from s1 to s2, then the last s2.pop() gives the reqd elt, then pop all remaining elts from s2 back to s1.
 
 
 Implementing Stack using Queue :
@@ -21,6 +21,8 @@ Stack with O(1) getMin() :
 and shrinks with the main stack itself.
 - 2nd approach : O(1) space, but stack elements are modified :
 https://www.youtube.com/watch?v=QMlDCR9xyd8&list=PLEJXowNB4kPzEvxN8ed6T13Meet7HP3h0&index=7&ab_channel=TECHDOSE
+or
+https://www.youtube.com/watch?v=ZvaRHYYI0-4&ab_channel=AdityaVerma
 
 
 Some important problems :
@@ -30,3 +32,6 @@ Soln - Couldn't do it in the first try, please retry, very important problem.
 
 2. Next greater element | LC-496 (https://leetcode.com/problems/next-greater-element-i/)
 Soln - Very Important stack utility
+
+3. LC-316 (https://leetcode.com/problems/remove-duplicate-letters/description/)
+Soln - Monotonic Stack example

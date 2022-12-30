@@ -2,3 +2,17 @@ Following are some question worth revisiting :
 1. https://www.algoexpert.io/questions/non-constructible-change
 
 2. https://leetcode.com/problems/gas-station/
+
+3. LC-387 (https://leetcode.com/problems/first-unique-character-in-a-string/description/)
+Soln - Maintaining a linked list for remembering the order of inputs. This is nothing but an
+implementation of LinkedHashMap.
+
+4. LC-239 (https://leetcode.com/problems/sliding-window-maximum/description/)
+Soln - Utility of deque in sliding window questions. Initially I thought of max heap as a soln to this
+problem, but deque is a far better approach.
+
+5. LC-155 (https://leetcode.com/problems/min-stack/description/)
+Soln - Great implementation of dynamic array.
+
+6. LC-901 (https://leetcode.com/problems/online-stock-span/description/)
+Soln - Easy, just need to figure out how to use previously calculated values to derive the new value.

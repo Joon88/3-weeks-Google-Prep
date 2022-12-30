@@ -1,0 +1,9 @@
+
+DB Sharding :
+- A shard is just a horizontal partition of the database.
+- In MongoDB, a replica set correspond to a shard.
+- Normalization and Denormalization of data or tables :
+    - Normalization : less storage space, more lookups (involving joins), updates in one place
+    - Denormalization : more space, single lookup to get all reqd fields, updates may span over multiple rows, leading
+    to inconsistency of data sometimes.
+    - the choice depends on the user requirements.
