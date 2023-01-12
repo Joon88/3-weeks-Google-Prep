@@ -16,3 +16,6 @@ Soln - Great implementation of dynamic array.
 
 6. LC-901 (https://leetcode.com/problems/online-stock-span/description/)
 Soln - Easy, just need to figure out how to use previously calculated values to derive the new value.
+
+7. https://www.algoexpert.io/questions/min-number-of-jumps
+Soln - Look at the 2nd solution for this. Very good trick, I used BFS and given solution uses normal array tricks.

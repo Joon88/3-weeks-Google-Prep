@@ -7,3 +7,86 @@ DB Sharding :
     - Denormalization : more space, single lookup to get all reqd fields, updates may span over multiple rows, leading
     to inconsistency of data sometimes.
     - the choice depends on the user requirements.
+- AWS Dynamo DB - strong read consistency
+
+SLA - Service Level Agreements e.g. max allowed API response time
+
+Message Queues : e.g. Amazon SQS (single consumer model)
+    - supposed to be single threaded and serve just as a buffer between producer and consumer.
+    - On the other hand Apache Kafka, Apache Spark Streaming can also be used as message queues, but they are
+    more appropriate for streaming real-time massive data.
+
+Apache Spark/MapReduce :
+    - are to be used as data analytics tool only
+    - not for OLTP (Online transaction processing), where directed customer iteractions are dependent on it
+
+Redirects :
+    - 307 : temporary redirect
+    - 308 : permanent redirect (is cached by the browser, so in future it'll directly call the redirected url instead of the original one)
+
+md5 hashing :
+    - generates 128 bit long hash
+
+Relational DBs :
+    - ideal for systems where we expect to make lots of complex queries involving joins, etc i.e. relational DBs
+    are good if we are frequently trying to look at the relationship between things.
+    - NoSQL DBs on the other hand are not good at looking at relationships, in exchange they are faster for writes and
+    simple key-value reads
+    - Moreover, NoSQL DBs are easier to scale than SQL DBs
+
+Useful calculations :
+    - 1 day = 100k seconds
+
+NoSQL Data Modelling :
+    - (1) Embedded collection (put all information in the same doc in one single DB) - easy read but difficult update,
+    also difficult in case the embedded information keeps on increasing without any limit (might overshoot the doc size limit)
+    - (2) Do normalization just like Relational DBs (with foreign key contains among DBs) - easier updates but difficult reads,
+    relational DBs allow JOINS but only a few NoSQL DBs allow server side joins, rest rely on application logic joins.
+    - (3) After normalization, maintain duplicates of most recently used fields in both DBs - e.g. in a Employee Deptt example,
+    we can keep the deptId and deptName fields in the Employee docs too(though duplicates, but would help us skip costly joins
+    in most cases)
+    - (4) For many-to-many relationships - maintain array of references of one Entity in another, as per requirement
+
+Choice of DBs : https://towardsdatascience.com/choosing-the-right-database-in-a-system-design-interview-b8af9c6dc525
+    - Elasticsearch is not data loss proof
+
+Memcached vs Redis :
+    - Memcached is multi-threaded, thus can support increased computation loads, Redis is single threaded
+    - Redis supports advanced DS like Hyperloglog, list, set, hash
+    - Only Redis supports snapshots, replications, transactions, pub/sub, Geospatial support
+
+Google Webmaster :
+    - used to submit new websites to Google for its search engine to crawl it
+
+Types of various Units of Memory :
+    Byte (*1)
+    Kilo Byte (*1024) = 10^3
+    Mega Byte (*1024*1024) = 10^6
+    Giga Byte (*1024*1024*1024) = 10^9
+    Tera Byte (*1024*1024*1024*1024) = 10^12
+    Peta Byte = 10^15
+    Exa Byte = 10^18
+    Zetta Byte = 10^21
+    Yotta Byte = 10^24
+
+Min.io : Opensource Object Storage solution, that can be implemented by anyone is a machine. Good for multi-cloud usages.
+
+Probabilistic Data Structures :
+- Count min sketch : efficient for counting stream of data (approximately)
+                    - uses sub-linear space
+
+========================================
+
+Web Crawler :
+-----------
+Bloomfilters : to detect duplicate urls
+Simhash (used by Google) : to detect duplicate contents in websites. Even if there are minor changes done here and there
+    by plagiarists, simhash gives the same hash Code. Thus, it's very efficient in this scenario.
+
+Total of around 900 million websites present in internet, out of which we can assume only 60% to be active. So, we
+can consider a total of around 600 million active websites to crawl.
+Now, on an average we can consider 100 pages per website.
+And we can assume average size of each webpage to be around 100 kb.
+
+So, to store all these webpages, total memory required would be around 6*10^6 * 100 * 100*10^3  = 6*10^13 (this would
+be in petabytes)
