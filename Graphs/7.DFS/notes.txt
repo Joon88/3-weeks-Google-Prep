@@ -1,0 +1,24 @@
+1. Great example of iterative DFS :
+
+Its just BFS with a Stack in place of a que, nothing extra
+
+public boolean twoColorable(int[][] edges) {
+    int[] colors = new int[edges.length];
+    Stack<Integer> stack = new Stack<>();
+    colors[0] = 0;
+    stack.push(0);
+
+    while(!stack.isEmpty()) {
+        int node = stack.pop();
+        int color = 1 - colors[node];
+
+        for(int sibling: edges[node]) {
+          if(colors[sibling] == -1) {
+            colors[sibling] = color;
+            stack.push(sibling);
+          } else if(colors[sibling] != color)
+            return false;
+        }
+    }
+    return true;
+}
