@@ -19,3 +19,6 @@ Soln - Easy, just need to figure out how to use previously calculated values to 
 
 7. https://www.algoexpert.io/questions/min-number-of-jumps
 Soln - Look at the 2nd solution for this. Very good trick, I used BFS and given solution uses normal array tricks.
+
+8. https://www.algoexpert.io/questions/longest-peak
+Soln - Look at the 3rd approach for the optimal and easy solution

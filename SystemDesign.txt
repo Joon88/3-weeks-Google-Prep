@@ -75,6 +75,8 @@ Probabilistic Data Structures :
 - Count min sketch : efficient for counting stream of data (approximately)
                     - uses sub-linear space
 
+- Data stored in RAM will be lost when the process that has written the data dies.
+
 ========================================
 
 Web Crawler :
