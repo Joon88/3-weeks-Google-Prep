@@ -12,7 +12,7 @@ a forest.
 Node coloring in Graphs :
 
 White - unvisited nodes
-Grey - visited and currently in the recursion stack
+Grey - visited and currently in the recursion stack (same as visited nodes in case of undirected graphs)
 Black - processed nodes i.e. visited and out of the current recursion stack
 
 Detecting cycles :
@@ -20,7 +20,7 @@ Detecting cycles :
 1. For undirected graph it's a DFS while keeping track of the visited nodes
 (grey nodes) and the current parent.
 If the graph is disconnected, then we have to run DFS in all the unvisited nodes(white nodes)
-one by one, while KEEPING TRACK OF THE NODES IN THE CURRENT RECURSION STACK(GREY NODES) AND
+one by one, while KEEPING TRACK OF THE NODES IN THE CURRENT RECURSION STACK(GREY NODES/VISITED NODES) AND
 THE CURRENT PARENT. Else running DFS in just one node will be enough.
 
 *** For undirected graphs, no need to track the processed nodes(black nodes), this is because
@@ -29,10 +29,14 @@ the visited nodes in stack, unless we are done looking for cycles. So, there's n
 track of the nodes visited and removed from stack. We need all three i.e. white, grey and black
 only in case of directed graphs.
 
+*** For undirected graphs, disjoint set with union find is also a good way of detecting cycles.
+
 2. For directed graph, since we are not sure if its connected or disconnected, we always
 consider it to be disconnected, and run DFS in all the unvisited nodes KEEPING TRACK OF
 THE NODES IN THE RECURSION STACK(GREY NODES) AND THE PROCESSED NODES(BLACK NODES).
-{In case we know the graph to have only a single component, just KEEP TRACK OF THE GREY NODES. - disputed}
+{In case we know the graph to have only a single component, just KEEP TRACK OF THE GREY NODES.
+Since, we already know that no matter which node we start from, we'll always visit all nodes
+before the cycle detection backtracks/ends. Thus, PROCESSED NODES tracking is of no use.}
 
 (using BFS) :
 1. For undirected graph, while doing BFS traversal for all unvisited nodes (coz maybe it's

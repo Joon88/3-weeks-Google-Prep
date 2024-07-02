@@ -35,7 +35,8 @@ U to a vertex in V.
 
 * A bigraph can only have even edge length cycle
 * Odd cycle is only possible if there is an edge between 2 vertices in the same set, but in that
-case the graph would no longer be bipartite.
+case the graph would no longer be bipartite. (here the cycle will not consider the edge directions,
+in case of directed graphs)
 * So, checking for odd length cycle is the test for bipartite graph
 
 How to identify if a graph is bipartite ?
@@ -84,9 +85,13 @@ Spanning Tree :
 Edge Relaxation :
 * Whenever we are relaxing edges of a graph, be it to find MST as in Prim's or shortest path in Dijkstra's
 or Bellman Ford. We always run the relaxEdge function V-1 times, coz the max number of edges in a MST or
-shortest path tree will always be V-1.
+shortest path will always be V-1.
 
 
 Good Resource of TreeSet and TreeMap : https://medium.com/swlh/introduction-to-treeset-and-treemap-5405f21124d
 
 Implementation of `implements Comparable<Node>` : 3-weeks-Google-Prep > Graphs > Shortest Paths Algo > lc_743.java
+(While not strictly mandatory, it's strongly recommended to override both equals() and hashCode() methods when
+implementing the Comparable interface to ensure consistency and avoid unexpected behavior within collections and algorithms.
+If two objects are considered equal by compareTo() (returning 0), they should also be considered equal by equals().
+This maintains logical consistency in sorting and grouping operations.)

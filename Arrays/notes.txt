@@ -22,3 +22,6 @@ Soln - Look at the 2nd solution for this. Very good trick, I used BFS and given 
 
 8. https://www.algoexpert.io/questions/longest-peak
 Soln - Look at the 3rd approach for the optimal and easy solution
+
+9. Merge overlapping intervals (https://www.algoexpert.io/questions/merge-overlapping-intervals)
+Soln - Very good question of intervals type.

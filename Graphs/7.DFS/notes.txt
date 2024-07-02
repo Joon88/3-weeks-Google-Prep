@@ -1,6 +1,6 @@
 1. Great example of iterative DFS :
 
-Its just BFS with a Stack in place of a que, nothing extra
+Its just BFS with a Stack in place of a queue, nothing extra
 
 public boolean twoColorable(int[][] edges) {
     int[] colors = new int[edges.length];

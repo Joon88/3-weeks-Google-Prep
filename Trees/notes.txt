@@ -7,7 +7,7 @@ e.g. preorder - 1st elt of the arr is root, postorder - last elt of the arr is r
 tree's root then DFS and a pre-order traversal are equivalent.
 
 Algos :
-* Narrowing bound algorithm
+* Narrowing bound algorithm (last algo here : https://www.geeksforgeeks.org/construct-bst-from-given-preorder-traversa/)
 
 Problems :
 * https://www.geeksforgeeks.org/check-if-a-given-array-can-represent-preorder-traversal-of-binary-search-tree/
@@ -18,7 +18,7 @@ Iterative ways to find Preorder/Postorder/Inorder traversals of a binary tree :
 1. Pre-order (1 stack reqd) : Start with the root in the stack. At every step pop x from stack, print it,
 and push to stack right(x) followed by left(x) (if they are non-null). Continue unless stack is empty.
 
-2. In-order (1 stack reqd) : With current set to root, keep pushing current in stack unless current == null,
+2. In-order (1 stack reqd) : With current set to root, keep pushing current in stack (current = left(current)) unless current == null,
 if current is null, pop from stack and print x, then set current = right(x). Continue this unless stack is empty.
 
 3. Post-order (2 stacks reqd) : start with root in stack 1, pop x from stack 1, push x to stack 2, and push
@@ -60,11 +60,13 @@ Soln - Somewhat similar to Binary Tree from Inorder and preorder. Gave me a hard
 Please retry.
 Note : Whenever we are using range checks in tree question, always ensure, you check the range conditions first
 and then only think about creating the nodes. Don't create node first and then check range conditions for next node.
+Most efficient : last approach in https://www.geeksforgeeks.org/construct-bst-from-given-preorder-traversa/
 
 7. Validate that a preorder sequence is of a BST | (https://www.interviewbit.com/problems/valid-bst-from-preorder/)
 Soln - Very Important. Can be done using O(n^2) easily, but stack helps achieve O(n) time. Also, one important
 observation is that, BST has many scopes of utilising Stacks as its just number comparison. Also, whenever we have
 2 nested loops (j inside i), with j as a function of i, it's an indication that Stack might be applicable here.
+(This comes to mind, when we think of how the iterative preorder works with a stack for a BST, described above)
 
 8. Binary Tree maximum path sum | LC-124 (https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 Soln - Very good question, saw it in one exponent interview video too. And solved it by my own in one shot.
