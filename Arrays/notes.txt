@@ -1,7 +1,9 @@
 Following are some question worth revisiting :
 1. https://www.algoexpert.io/questions/non-constructible-change
+Soln - VVI trick
 
 2. https://leetcode.com/problems/gas-station/
+Soln - Handling the negatice case first, make the rest of the problem much simpler.
 
 3. LC-387 (https://leetcode.com/problems/first-unique-character-in-a-string/description/)
 Soln - Maintaining a linked list for remembering the order of inputs. This is nothing but an
