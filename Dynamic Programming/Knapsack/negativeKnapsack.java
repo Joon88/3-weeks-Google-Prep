@@ -11,6 +11,7 @@ possibility of negative and 0 values, even when weight[n] > sum, we dont simply
 skip weight[n], like we do for only positive weights, instead we keep considering
 both the skip and consider scenarios until n == 0.
  */
+import java.util.*;
 
 class Solution {
     static int[][] memo;
@@ -130,7 +131,7 @@ class Solution {
                 }
             */
             for(int s = total-negativeMod ; s <= total+positiveMod ; s++) {
-                dp[i][s] = dp[i-1][s] || dp[i-1][s - weights[n-1]];
+                dp[i][s] = dp[i-1][s] || dp[i-1][s - weights[i-1]];
             }
         }
         return dp[n][sum+total];

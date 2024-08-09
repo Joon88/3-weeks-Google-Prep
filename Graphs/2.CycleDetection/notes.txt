@@ -57,6 +57,7 @@ one vertex with 0 outdegree. But, it's not the sufficient condition.
 2 values (one for unvisited flag and another for visited). Nothing else regd. Follow Algorithms -->
 Graphs --> src --> Graph.java
 (For BFS traversal, rule of thumb is : as soon as elt is added to queue, mark it as visited)
+(For DFS traversal, rule of thumb is : as soon as elt is added to recursion stack, mark it as visited)
 
 Some Problems on Cycle Detection :
 

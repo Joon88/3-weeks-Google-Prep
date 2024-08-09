@@ -63,3 +63,22 @@ Soln - Same logic as unbounded knapsack.
 7. Minimum operations to reduce X to 0 | LC-1658 (https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/)
 Soln - Not able to solve, pls revisit. Recursive with memoization gives TLE. Done using prefixArraySum technique,
 as per Tech Dose video.
+
+// Sample for for sliding windows (finding the max subarray length that sums to be targetSum)
+// sliding windows are good for +ve integer questions
+// for -ve integer questions, maintaining a prefixArraySumMap is easier as shown in question 7 above
+int beg = 0;
+int maxWindowLength = 0;
+int currWindowSize = 0;
+for(int end = 0; end < nums.length; end++) {
+     currWindowSize += nums[end];
+
+     while(currWindowSize > targetSum) {
+          currWindowSize -= nums[beg];
+          beg++;
+     }
+     if(currWindowSize == targetSum) {
+          maxWindowLength = Math.max(maxWindowLength, end-beg+1);
+     }
+}
+return maxWindowLength;

@@ -46,3 +46,10 @@ knapsack recommendation.
 
 7. Burst balloons | LC-312 (https://leetcode.com/problems/burst-balloons/)
 Soln - Very important and hard problem based on the concept of matrix chain multiplication.
+Recursive equations : (i and j are pointers to the input array arr, just like in matrix chain)
+arr1 = [1, arr, 1] (appended 1 before and after)
+
+f(i, j) = 0                                                         ; i > j
+        = max over i <= k <= j {
+            f(i, k-1) + arr1[k-1] * arr1[k] * arr1[k+1] + f(k+1, j) // Kth balloon is burst
+        }

@@ -23,6 +23,7 @@ and shrinks with the main stack itself.
 https://www.youtube.com/watch?v=QMlDCR9xyd8&list=PLEJXowNB4kPzEvxN8ed6T13Meet7HP3h0&index=7&ab_channel=TECHDOSE
 or
 https://www.youtube.com/watch?v=ZvaRHYYI0-4&ab_channel=AdityaVerma
+(Each time the minElement changes, store '2*curr-min' in the stack and the curr number in the 'min' variable)
 
 
 Some important problems :
