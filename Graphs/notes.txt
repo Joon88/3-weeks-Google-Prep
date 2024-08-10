@@ -3,6 +3,12 @@ Graph Representation :
 * Adjacency List : O(V+E) time and space to form and store
 For very dense graph E ~ V^2, so adjacency matrix serves better else adjacency list
 
+* Time complexities of all algos with adjacency matrix is same as the ones with adjacency 
+list, except one different : every occurence of E is replaced by V^2.
+e.g. BFS, DFS = O(V + V^2) = O(V^2)
+Dijkstra's = O(V^2 log V)
+and so on ...
+
 
 BFS & DFS :
 One stop explanation : https://betterprogramming.pub/algorithms-searching-through-a-tree-33610e4577bd
