@@ -65,7 +65,8 @@ Soln - Not able to solve, pls revisit. Recursive with memoization gives TLE. Don
 as per Tech Dose video.
 
 8. Combination sum 2 | LC-40 (https://leetcode.com/problems/combination-sum-ii/)
-Soln - Same as subset sum, but it asks to return all the unique subsets. Interesting, check this.
+Soln - Same as subset sum, but it asks to return all the unique subsets. Achieving this uniqueness 
+in a tricky way is the challenge here. Interesting, check this.
 
 // Sample for for sliding windows (finding the max subarray length that sums to be targetSum)
 // sliding windows are good for +ve integer questions
