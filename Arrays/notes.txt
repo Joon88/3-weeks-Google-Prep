@@ -27,3 +27,6 @@ Soln - Look at the 3rd approach for the optimal and easy solution
 
 9. Merge overlapping intervals (https://www.algoexpert.io/questions/merge-overlapping-intervals)
 Soln - Very good question of intervals type.
+
+10. Find kth smallest pair distance | LC-719 (https://leetcode.com/problems/find-k-th-smallest-pair-distance/)
+Soln - Very Hard question. Implemented last approach as per editorial.
