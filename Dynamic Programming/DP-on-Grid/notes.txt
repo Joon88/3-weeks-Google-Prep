@@ -53,3 +53,7 @@ f(i, j) = 0                                                         ; i > j
         = max over i <= k <= j {
             f(i, k-1) + arr1[k-1] * arr1[k] * arr1[k+1] + f(k+1, j) // Kth balloon is burst
         }
+
+8. Maximum Number of points with cost | LC-1937 (https://leetcode.com/problems/maximum-number-of-points-with-cost/)
+Soln - These problems involve concepts of optimizing a series of decisions or transitions in a 2D array.
+CATEGORY: MATRIX POINTS PROBLEMS
