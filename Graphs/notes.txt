@@ -9,6 +9,11 @@ e.g. BFS, DFS = O(V + V^2) = O(V^2)
 Dijkstra's = O(V^2 log V)
 and so on ...
 
+* For flood-fill kinda DFS/BFS with pruning (upto length k) in an adjacency matrix or a grid, 
+the time complexity would be
+O(m * n * 4^k) where, m -> grid.length, n -> grid[0].length & k -> max DFS tree ht.
+i.e. At every grid cell, we have 4 options (visit left or right or up or down) upto prune length k
+
 
 BFS & DFS :
 One stop explanation : https://betterprogramming.pub/algorithms-searching-through-a-tree-33610e4577bd
