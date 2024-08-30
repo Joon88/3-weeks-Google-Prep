@@ -2,5 +2,14 @@ All you need to know about Tries :
 https://www.geeksforgeeks.org/trie-insert-and-search/
 
 Examples :
-1. Count words with given prefix | LC-2185 (https://leetcode.com/problems/counting-words-with-a-given-prefix/)
+1. Implement Trie | LC-208 (https://leetcode.com/problems/implement-trie-prefix-tree)
+Soln - Implementation of Trie
+
+2. Count words with given prefix | LC-2185 (https://leetcode.com/problems/counting-words-with-a-given-prefix/)
 Soln - Modified the TrieNode class
+
+3. Word count 2 | LC-212 (https://leetcode.com/problems/word-search-ii)
+Soln - Using trie as a helper
+
+4. Design Add and Search words DS | LC-211 (https://leetcode.com/problems/design-add-and-search-words-data-structure)
+Soln - pure Trie
