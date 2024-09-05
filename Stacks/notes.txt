@@ -36,3 +36,6 @@ Soln - Very Important stack utility
 
 3. LC-316 (https://leetcode.com/problems/remove-duplicate-letters/description/)
 Soln - Monotonic Stack example
+
+4. Decode string (https://www.geeksforgeeks.org/problems/decode-the-string2444/1)
+Soln - Pls try, looks easy but took me a lot of time.

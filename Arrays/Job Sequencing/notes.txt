@@ -1,0 +1,6 @@
+1. LC-1723 (https://leetcode.com/problems/find-minimum-time-to-finish-all-jobs/)
+Soln - Try to pay attention to the constraints to decide the feasible approach
+
+2. LC-2589 (https://leetcode.com/problems/minimum-time-to-complete-all-tasks/)
+Soln - Very good question.
+Try to pay attention to the constraints to decide the feasible approach
