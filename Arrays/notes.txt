@@ -30,3 +30,25 @@ Soln - Very good question of intervals type.
 
 10. Find kth smallest pair distance | LC-719 (https://leetcode.com/problems/find-k-th-smallest-pair-distance/)
 Soln - Very Hard question. Implemented last approach as per editorial.
+
+11. LC-424 (https://leetcode.com/problems/longest-repeating-character-replacement)
+Soln - Sliding window technique
+
+12. LC-76 (https://leetcode.com/problems/minimum-window-substring/)
+Soln - Very important hard question
+
+13. LC-4 (https://leetcode.com/problems/median-of-two-sorted-arrays)
+Soln - Very good hard problem
+
+
+NeetCode-150 :---
+------------
+1. N Queens (https://leetcode.com/problems/n-queens)
+Soln - Try once. Important concept of how of handle positive and negative diagonals.
+
+2. Task Scheduler (https://leetcode.com/problems/task-scheduler)
+Soln - Analyse and visualise before attempting.
+
+3. Car Fleet (https://leetcode.com/problems/car-fleet)
+Soln - In questions related to speed/distance/time, always think about approaching the problem 
+with the missing value out of the three.
